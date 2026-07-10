@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #FFF3D1;
+    color: #840B14;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(132, 11, 20, 0.15);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(132, 11, 20, 0.35);
+  }
+
+  ::selection {
+    background: #FEA3DC;
+    color: #840B14;
+  }
+}
+
+@layer components {
+  /* Primary Action Button — Burgundy color #840B14 with Ivory text */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3.5 rounded-full
+           bg-burgundy text-ivory
+           font-body font-medium text-sm tracking-wide
+           transition-all duration-300 ease-out;
+  }
+  .btn-primary:hover {
+    @apply bg-[#66050b] shadow-soft;
+    transform: translateY(-1px);
+  }
+
+  /* Secondary / outline button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-3.5 rounded-full
+           bg-card-surface border border-hairline-border
+           text-burgundy
+           font-body font-medium text-sm tracking-wide
+           transition-all duration-300 ease-out;
+  }
+  .btn-secondary:hover {
+    @apply border-burgundy/40 bg-white shadow-sm;
+    transform: translateY(-1px);
+  }
+
+  /* Gold / Premium Action Button */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-2.5 rounded-full
+           bg-amber-gold text-burgundy
+           font-body font-semibold text-xs tracking-wider uppercase
+           transition-all duration-300 ease-out;
+  }
+  .btn-gold:hover {
+    @apply shadow-glow bg-[#f0a93c];
+    transform: translateY(-1px);
+  }
+
+  /* Small text link button */
+  .btn-link {
+    @apply inline-flex items-center gap-1.5
+           text-text-secondary text-sm font-medium
+           transition-colors duration-300;
+  }
+  .btn-link:hover {
+    @apply text-text-primary;
+  }
+
+  /* Card / Overlay Background — Card Surface #FFFBEC with custom shadow */
+  .glass-card {
+    @apply bg-card-surface border border-hairline-border rounded-2xl
+           shadow-soft transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-burgundy/20 shadow-md;
+  }
+
+  /* Feature card item */
+  .feature-item {
+    @apply flex items-start gap-3 text-left;
+  }
+
+  /* Section wrapper */
+  .section-wrapper {
+    @apply max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12;
+  }
+
+  /* Divider */
+  .divider {
+    @apply w-full h-px bg-hairline-border;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
