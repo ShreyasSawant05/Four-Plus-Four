@@ -49,7 +49,7 @@ export default function Navbar() {
           id="nav-brand"
           className="hover:opacity-85 transition-opacity flex items-center gap-2"
         >
-          <img src="/Logo for 4+4.png" alt="Four plus Four" className="h-8 object-contain" />
+          <img src="/logo.png" alt="Four plus Four" className="h-8 object-contain" />
         </button>
 
         {/* Desktop links */}
