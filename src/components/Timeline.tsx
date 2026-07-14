@@ -54,10 +54,10 @@ export default function Timeline() {
 
         {/* Responsive Content Grid Container */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-8 lg:px-12 h-full flex flex-col justify-center select-none overflow-visible">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center w-full">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center w-full">
             
             {/* Left/Top Progress Tracker: vertical on desktop, horizontal on mobile */}
-            <div className="col-span-1 md:col-span-3 lg:col-span-3 w-full flex items-center justify-center md:h-[500px]">
+            <div className="col-span-1 md:col-span-3 lg:col-span-3 w-full flex items-center justify-center md:h-[500px] relative z-20">
               <TimelineProgress
                 steps={steps}
                 activeIndex={activeIndex}
@@ -67,7 +67,7 @@ export default function Timeline() {
             </div>
 
             {/* Right Card Transitions Container */}
-            <div className="col-span-1 md:col-span-9 lg:col-span-9 w-full overflow-visible">
+            <div className="col-span-1 md:col-span-9 lg:col-span-9 w-full overflow-visible relative z-10">
               <TimelineContent
                 activeIndex={activeIndex}
                 smoothProgress={smoothProgress}

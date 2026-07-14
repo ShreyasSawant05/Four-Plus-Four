@@ -56,7 +56,7 @@ export default function TryOnModal() {
       />
 
       {/* Modal content */}
-      <div className="relative z-10 w-full max-w-4xl mx-4 flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-4xl mx-4 flex flex-col items-center max-h-[95vh] overflow-y-auto no-scrollbar px-2 py-1">
         {/* Header */}
         <div className="w-full flex items-center justify-between mb-6">
           <div>

@@ -13,7 +13,7 @@ export default function TimelineContent({
   totalSteps,
 }: TimelineContentProps) {
   return (
-    <div className="relative w-full h-[500px] md:h-[420px] flex items-center justify-center overflow-visible">
+    <div className="relative w-full h-[500px] md:h-[420px] flex items-center justify-center overflow-hidden md:overflow-visible">
       {Array.from({ length: totalSteps }).map((_, idx) => (
         <TimelineCard
           key={idx}

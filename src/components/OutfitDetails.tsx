@@ -51,7 +51,7 @@ export default function OutfitDetails() {
   return (
     <div
       ref={containerRef}
-      className="w-full lg:w-[28%] h-screen sticky top-0 flex flex-col justify-center px-6 md:px-10 py-16 bg-ivory"
+      className="w-full lg:w-[28%] h-auto lg:h-screen sticky lg:top-0 flex flex-col justify-center px-6 md:px-10 py-8 lg:py-16 bg-ivory"
       style={{ opacity: 0 }}
     >
       <div className="space-y-6">

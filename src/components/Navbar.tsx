@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useOutfitStore, type ModalType } from '../store/useOutfitStore';
 
 export default function Navbar() {
@@ -69,31 +70,39 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           type="button"
-          className="lg:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-1.5 p-2 justify-center items-center h-10 w-10 relative"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`w-5 h-px bg-burgundy transition-transform duration-300 ${mobileOpen ? 'rotate-45 translate-y-[3.5px]' : ''}`} />
-          <span className={`w-5 h-px bg-burgundy transition-opacity duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
-          <span className={`w-5 h-px bg-burgundy transition-transform duration-300 ${mobileOpen ? '-rotate-45 -translate-y-[3.5px]' : ''}`} />
+          <span className={`w-5 h-px bg-burgundy transition-all duration-300 ${mobileOpen ? 'rotate-45 absolute' : ''}`} />
+          <span className={`w-5 h-px bg-burgundy transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
+          <span className={`w-5 h-px bg-burgundy transition-all duration-300 ${mobileOpen ? '-rotate-45 absolute' : ''}`} />
         </button>
       </div>
 
       {/* Mobile dropdown */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-card-surface/95 backdrop-blur-xl border-t border-hairline-border px-5 py-4 space-y-3">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              type="button"
-              onClick={() => handleClick(item)}
-              className="block w-full text-left text-sm text-burgundy hover:text-[#d51927] transition-colors py-2"
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="lg:hidden bg-card-surface/95 backdrop-blur-xl border-t border-hairline-border px-5 py-4 space-y-2.5 overflow-hidden"
+          >
+            {navItems.map((item) => (
+              <button
+                key={item.label}
+                type="button"
+                onClick={() => handleClick(item)}
+                className="block w-full text-left text-sm font-medium text-burgundy hover:text-[#d51927] transition-colors py-2"
+              >
+                {item.label}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

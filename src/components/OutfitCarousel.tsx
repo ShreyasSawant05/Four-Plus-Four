@@ -56,7 +56,7 @@ export default function OutfitCarousel({ scrollContainerRef }: OutfitCarouselPro
   };
 
   return (
-    <div className="w-full lg:w-[32%] h-screen sticky top-0 flex flex-col justify-center relative bg-ivory">
+    <div className="w-full lg:w-[32%] h-auto lg:h-screen sticky lg:top-0 flex flex-col justify-center relative bg-ivory py-8 lg:py-0">
       {/* Section label */}
       <div className="px-6 mb-6">
         <p className="font-display text-xs tracking-[0.3em] uppercase text-burgundy/45 font-bold">

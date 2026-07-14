@@ -53,41 +53,7 @@ export default function TimelineCard({
   // Scale: Active goes 0.92 -> 1, inactive is 90% (0.9)
   const scale = useTransform(smoothProgress, inputRange, [0.9, 0.9, 1, 0.9, 0.9]);
 
-  // Blur: Active is 0, inactive is 2px, far away is 3px
-  const blurVal = useTransform(smoothProgress, inputRange, [3, 2, 0, 2, 3]);
-  const brightnessVal = useTransform(smoothProgress, inputRange, [0.8, 0.85, 1, 0.85, 0.8]);
-  
-  // Combine blur and brightness into CSS filter string
-  const filter = useTransform(
-    [blurVal, brightnessVal],
-    ([blur, brightness]) => `blur(${blur}px) brightness(${brightness})`
-  );
 
-  // Border: Soft Amber Gold glow when active, hairline-border when inactive
-  const borderColor = useTransform(
-    smoothProgress,
-    inputRange,
-    [
-      'rgba(132, 11, 20, 0.14)',
-      'rgba(132, 11, 20, 0.14)',
-      'rgba(223, 151, 43, 0.65)',
-      'rgba(132, 11, 20, 0.14)',
-      'rgba(132, 11, 20, 0.14)',
-    ]
-  );
-
-  // Shadow: Soft elegant shadow, increasing to amber glow when active
-  const boxShadow = useTransform(
-    smoothProgress,
-    inputRange,
-    [
-      '0 4px 20px rgba(132, 11, 20, 0.04)',
-      '0 4px 20px rgba(132, 11, 20, 0.04)',
-      '0 0 30px rgba(223, 151, 43, 0.35), 0 20px 60px -20px rgba(132, 11, 20, 0.18)',
-      '0 4px 20px rgba(132, 11, 20, 0.04)',
-      '0 4px 20px rgba(132, 11, 20, 0.04)',
-    ]
-  );
 
   // Framer Motion Animation Variants for internal card elements
   const containerVariants: Variants = {
@@ -139,7 +105,7 @@ export default function TimelineCard({
             </motion.div>
 
             {/* Right: Visual details */}
-            <div className="flex-1 w-full h-[220px] md:h-[260px] flex items-center gap-4 relative">
+            <div className="flex-1 w-full h-[170px] md:h-[260px] flex items-center gap-4 relative">
               <motion.div 
                 className="w-3/5 h-full rounded-2xl overflow-hidden border border-hairline-border shadow-sm"
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -194,7 +160,7 @@ export default function TimelineCard({
             </motion.div>
 
             {/* Right: Visual details */}
-            <div className="flex-1 w-full h-[220px] md:h-[260px] flex items-center justify-between gap-3 relative">
+            <div className="flex-1 w-full h-[170px] md:h-[260px] flex items-center justify-between gap-3 relative">
               {/* Before Model (Silhouette/Grayscale) */}
               <motion.div 
                 className="w-[43%] h-full rounded-2xl overflow-hidden border border-hairline-border shadow-sm relative bg-[#EADCC2]/10"
@@ -266,36 +232,36 @@ export default function TimelineCard({
             </motion.div>
 
             {/* Right: Visual details */}
-            <div className="flex-1 w-full h-[220px] md:h-[260px] flex flex-col md:flex-row items-center justify-center gap-6 p-4 rounded-2xl bg-white/30 border border-hairline-border/40">
+            <div className="flex-1 w-full h-[170px] md:h-[260px] flex flex-row items-center justify-center gap-4 md:gap-6 p-3 md:p-4 rounded-2xl bg-white/30 border border-hairline-border/40">
               {/* Rotating Color Wheel */}
               <motion.div 
-                className="relative w-24 h-24 rounded-full border border-hairline-border flex items-center justify-center flex-shrink-0 shadow-sm"
+                className="relative w-16 h-16 md:w-24 md:h-24 rounded-full border border-hairline-border flex items-center justify-center flex-shrink-0 shadow-sm"
                 style={{
                   background: 'conic-gradient(#840B14 0deg 72deg, #DF972B 72deg 144deg, #7A5A1B 144deg 216deg, #F6E6B6 216deg 288deg, #FEA3DC 288deg 360deg)'
                 }}
                 animate={isActive ? { rotate: 360 } : { rotate: 0 }}
                 transition={isActive ? { duration: 18, repeat: Infinity, ease: 'linear' } : { duration: 0 }}
               >
-                <div className="w-10 h-10 bg-bg-card rounded-full border border-hairline-border/40" />
+                <div className="w-7 h-7 md:w-10 md:h-10 bg-bg-card rounded-full border border-hairline-border/40" />
               </motion.div>
 
               {/* Analysis Palette */}
-              <div className="text-left space-y-2.5 flex-1">
+              <div className="text-left space-y-2 flex-1">
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <p className="text-[9px] uppercase tracking-wider text-burgundy/50 font-bold">Matched Undertone</p>
-                  <h4 className="font-display text-lg font-bold text-burgundy leading-tight">Warm Autumn</h4>
+                  <h4 className="font-display text-base md:text-lg font-bold text-burgundy leading-tight">Warm Autumn</h4>
                 </motion.div>
                 
                 {/* Color swatches appearing one by one */}
-                <div className="flex gap-1.5 flex-wrap">
+                <div className="flex gap-1 flex-wrap">
                   {['#840B14', '#9e522b', '#7A5A1B', '#F6E6B6', '#DF972B', '#b2353b'].map((c, i) => (
                     <motion.div
                       key={c}
-                      className="w-7 h-7 rounded-full border border-white shadow-sm flex-shrink-0 cursor-pointer"
+                      className="w-5 h-5 md:w-7 md:h-7 rounded-full border border-white shadow-sm flex-shrink-0 cursor-pointer"
                       style={{ backgroundColor: c }}
                       initial={{ scale: 0, opacity: 0 }}
                       animate={isActive ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
@@ -327,7 +293,7 @@ export default function TimelineCard({
             </motion.div>
 
             {/* Right: Visual details */}
-            <div className="flex-1 w-full h-[220px] md:h-[260px] grid grid-cols-2 gap-3">
+            <div className="flex-1 w-full h-[170px] md:h-[260px] grid grid-cols-2 gap-2.5">
               {[
                 { label: 'Luxury Eyewear', icon: '🕶️' },
                 { label: 'Leather Handbag', icon: '👜' },
@@ -336,13 +302,13 @@ export default function TimelineCard({
               ].map((acc, i) => (
                 <motion.div
                   key={acc.label}
-                  className="bg-white/60 border border-hairline-border rounded-2xl flex flex-col items-center justify-center p-3 shadow-sm hover:border-amber-gold/60 transition-colors duration-300"
+                  className="bg-white/60 border border-hairline-border rounded-2xl flex flex-col items-center justify-center p-2 md:p-3 shadow-sm hover:border-amber-gold/60 transition-colors duration-300"
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={isActive ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
                   transition={{ type: 'spring', stiffness: 100, damping: 15, delay: 0.15 + i * 0.1 }}
                   whileHover={{ scale: 1.04, backgroundColor: 'rgba(255, 251, 236, 0.9)' }}
                 >
-                  <span className="text-2xl md:text-3xl select-none mb-1.5">{acc.icon}</span>
+                  <span className="text-xl md:text-3xl select-none mb-0.5 md:mb-1.5">{acc.icon}</span>
                   <span className="text-[10px] uppercase tracking-wider text-burgundy/60 font-bold mt-1 text-center truncate w-full">
                     {acc.label}
                   </span>
@@ -378,7 +344,7 @@ export default function TimelineCard({
             </motion.div>
 
             {/* Right: Visual details */}
-            <div className="flex-1 w-full h-[220px] md:h-[260px] grid grid-cols-3 gap-2 items-stretch py-2">
+            <div className="flex-1 w-full h-[170px] md:h-[260px] grid grid-cols-3 gap-2 items-stretch py-1.5">
               {[
                 { label: 'Blazer', price: '$129', icon: '🧥' },
                 { label: 'Trousers', price: '$79', icon: '👖' },
@@ -416,14 +382,14 @@ export default function TimelineCard({
         y,
         scale,
         opacity,
-        filter,
-        borderColor,
-        boxShadow,
       }}
       className={`
-        absolute inset-0 m-auto w-full max-w-[92%] md:max-w-2xl lg:max-w-[700px] h-[460px] md:h-[380px]
-        bg-bg-card border rounded-[32px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10
-        overflow-hidden select-none transition-all duration-300
+        absolute inset-0 m-auto w-full max-w-[92%] md:max-w-2xl lg:max-w-[700px] h-[420px] md:h-[380px]
+        bg-bg-card border rounded-[32px] p-5 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10
+        overflow-hidden select-none transition-all duration-500 ease-out
+        ${isActive
+          ? 'border-amber-gold/60 shadow-[0_0_30px_rgba(223,151,43,0.35),0_20px_60px_-20px_rgba(132,11,20,0.18)]'
+          : 'border-hairline-border shadow-[0_4px_20px_rgba(132,11,20,0.04)]'}
       `}
     >
       {renderCardContent()}

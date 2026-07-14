@@ -22,7 +22,7 @@ export default function TimelineItem({
   return (
     <div
       onClick={onClick}
-      className="flex flex-row items-center gap-4 cursor-pointer group select-none relative z-10 py-1.5 w-full transition-all duration-300"
+      className="flex flex-row items-center gap-4 cursor-pointer group select-none relative z-10 py-1.5 w-auto md:w-full transition-all duration-300"
     >
       {/* Badge Ring/Circle */}
       <div className="relative w-12 h-12 flex items-center justify-center flex-shrink-0">

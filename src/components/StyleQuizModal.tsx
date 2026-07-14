@@ -45,7 +45,7 @@ export default function StyleQuizModal() {
     >
       <div className="fixed inset-0 bg-bg/95 backdrop-blur-2xl" onClick={closeModal} />
 
-      <div className="relative z-10 w-full max-w-xl bg-bg-card border border-border-medium rounded-3xl p-6 md:p-10 text-text-primary shadow-2xl">
+      <div className="relative z-10 w-full max-w-xl bg-bg-card border border-border-medium rounded-3xl p-6 md:p-10 text-text-primary shadow-2xl max-h-[90vh] overflow-y-auto no-scrollbar">
         {/* Header */}
         <div className="flex items-center justify-between pb-6 border-b border-border-subtle mb-6">
           <div>
