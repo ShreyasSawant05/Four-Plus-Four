@@ -98,7 +98,7 @@ export default function BodyAnalysisModal() {
         {/* Styling Advice */}
         <div className="p-5 rounded-2xl bg-accent-muted border border-accent-border text-center">
           <p className="text-xs text-accent font-medium leading-relaxed">
-            💡 Stylist Rule: Pair darker, fitted tops with lighter or voluminous bottoms to easily balance your upper frame.
+            Stylist Rule: Pair darker, fitted tops with lighter or voluminous bottoms to easily balance your upper frame.
           </p>
         </div>
       </div>

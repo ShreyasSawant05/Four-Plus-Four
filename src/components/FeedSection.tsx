@@ -64,14 +64,14 @@ export default function FeedSection() {
         {/* Outfit grid (8 items) */}
         <div className="feed-animate grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[
-            { aesthetic: 'Coquette', color: '#FEA3DC', tag: '🌸 Ribbon Trim', img: 'https://images.unsplash.com/photo-1576188973526-0e5d70b7dd0e?w=500&auto=format&fit=crop&q=80' },
-            { aesthetic: 'Minimalist', color: '#F6E6B6', tag: '🤍 Clean Cuffs', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&auto=format&fit=crop&q=80' },
-            { aesthetic: 'Quiet Luxury', color: '#FFFBEC', tag: '✨ Tailored Silk', img: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=500&auto=format&fit=crop&q=80' },
-            { aesthetic: 'Techwear', color: '#7A5A1B', tag: '🖤 Cargo Shell', img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&auto=format&fit=crop&q=80' },
-            { aesthetic: 'Clean Girl', color: '#DF972B', tag: '👜 Linen Vest', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=80' },
-            { aesthetic: 'Dark Academy', color: '#840B14', tag: '📚 Tweed Blazer', img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&auto=format&fit=crop&q=80' },
-            { aesthetic: 'Grunge', color: '#6b6b6b', tag: '🎸 Torn Knits', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop&q=80' },
-            { aesthetic: 'Streetwear', color: '#d4c5a0', tag: '👟 Oversized Hoodie', img: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Coquette', color: '#FEA3DC', tag: 'Ribbon Trim', img: 'https://images.unsplash.com/photo-1576188973526-0e5d70b7dd0e?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Minimalist', color: '#F6E6B6', tag: 'Clean Cuffs', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Quiet Luxury', color: '#FFFBEC', tag: 'Tailored Silk', img: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Techwear', color: '#7A5A1B', tag: 'Cargo Shell', img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Clean Girl', color: '#DF972B', tag: 'Linen Vest', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Dark Academy', color: '#840B14', tag: 'Tweed Blazer', img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Grunge', color: '#6b6b6b', tag: 'Torn Knits', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Streetwear', color: '#d4c5a0', tag: 'Oversized Hoodie', img: 'https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&auto=format&fit=crop&q=80' },
           ].map((item, index) => (
             <div
               key={index}

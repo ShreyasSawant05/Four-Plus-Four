@@ -2,7 +2,7 @@ import { motion, MotionValue } from 'framer-motion';
 import TimelineItem from './TimelineItem';
 
 interface TimelineProgressProps {
-  steps: { label: string; icon: string }[];
+  steps: { label: string }[];
   activeIndex: number;
   smoothProgress: MotionValue<number>;
   containerRef: React.RefObject<HTMLDivElement | null>;
@@ -66,7 +66,6 @@ export default function TimelineProgress({
             key={idx}
             index={idx}
             label={step.label}
-            icon={step.icon}
             isActive={activeIndex === idx}
             isCompleted={activeIndex > idx}
             onClick={() => handleStepClick(idx)}

@@ -5,7 +5,6 @@ interface TimelineItemProps {
   label: string;
   isActive: boolean;
   isCompleted: boolean;
-  icon: string;
   onClick?: () => void;
 }
 
@@ -14,7 +13,6 @@ export default function TimelineItem({
   label,
   isActive,
   isCompleted,
-  icon,
   onClick,
 }: TimelineItemProps) {
   const stepNumber = String(index + 1).padStart(2, '0');
@@ -60,16 +58,8 @@ export default function TimelineItem({
         </motion.div>
       </div>
 
-      {/* Step Label & Icon: Stacked inline for clean sidebar look on desktop */}
-      <div className="md:flex hidden items-center gap-2.5 text-left flex-shrink-0">
-        <span 
-          className={`
-            text-base transition-all duration-300
-            ${isActive ? 'scale-110 opacity-100' : 'opacity-65 scale-95 group-hover:opacity-85'}
-          `}
-        >
-          {icon}
-        </span>
+      {/* Step Label: Clean sidebar look on desktop */}
+      <div className="md:flex hidden items-center text-left flex-shrink-0">
         <span 
           className={`
             font-body text-[10px] tracking-widest uppercase font-bold transition-colors duration-300 whitespace-nowrap

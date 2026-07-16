@@ -155,7 +155,7 @@ export default function TimelineCard({
                 className="inline-flex items-center gap-2 mt-2 px-3 py-1.5 rounded-xl border border-dashed border-amber-gold/40 bg-amber-gold/5 text-burgundy text-xs font-semibold"
                 variants={slideUpVariants}
               >
-                ✨ AI-Powered Realistic Fit
+                AI-Powered Realistic Fit
               </motion.div>
             </motion.div>
 

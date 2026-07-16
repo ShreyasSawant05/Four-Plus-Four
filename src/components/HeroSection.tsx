@@ -97,7 +97,6 @@ export default function HeroSection() {
           {/* Search/Generator Input */}
           <div className="hero-animate flex flex-col sm:flex-row items-center gap-2 p-1.5 rounded-2xl md:rounded-full bg-white/70 border border-hairline-border shadow-soft w-full max-w-lg">
             <div className="flex-1 w-full flex items-center gap-2 px-3">
-              <span className="text-burgundy/40 text-lg">✨</span>
               <input
                 type="text"
                 placeholder={currentPlaceholder}
@@ -115,7 +114,7 @@ export default function HeroSection() {
           {/* Demo links list */}
           <div className="hero-animate flex flex-wrap items-center gap-2 text-xs text-burgundy/70">
             <span>Try demo searches:</span>
-            {['🌸 Spring Knit', '👜 Clean Girl Blazer', '🧣 Cozy Scarf Look'].map((demo) => (
+            {['Spring Knit', 'Clean Girl Blazer', 'Cozy Scarf Look'].map((demo) => (
               <button
                 key={demo}
                 onClick={() => setActiveModal('shop')}

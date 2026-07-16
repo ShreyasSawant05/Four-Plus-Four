@@ -4,11 +4,11 @@ import TimelineProgress from './TimelineProgress';
 import TimelineContent from './TimelineContent';
 
 const steps = [
-  { label: 'Inspiration', icon: '💡' },
-  { label: 'Virtual Try-On', icon: '✨' },
-  { label: 'Color Analysis', icon: '🎨' },
-  { label: 'Accessories', icon: '👜' },
-  { label: 'Shop the Look', icon: '🛒' },
+  { label: 'Inspiration' },
+  { label: 'Virtual Try-On' },
+  { label: 'Color Analysis' },
+  { label: 'Accessories' },
+  { label: 'Shop the Look' },
 ];
 
 export default function Timeline() {
