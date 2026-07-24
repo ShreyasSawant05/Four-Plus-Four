@@ -135,4 +135,23 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  @keyframes scanLine {
+    0% {
+      top: 0%;
+      opacity: 0.4;
+    }
+    50% {
+      top: 100%;
+      opacity: 1;
+    }
+    100% {
+      top: 0%;
+      opacity: 0.4;
+    }
+  }
+
+  .animate-scanner {
+    animation: scanLine 2.5s ease-in-out infinite;
+  }
 }

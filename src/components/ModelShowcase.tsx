@@ -84,7 +84,9 @@ export default function ModelShowcase({ modelWrapperRef }: ModelShowcaseProps) {
             {/* Torso icon / specs */}
             <div className="flex flex-col items-center justify-center relative z-10 space-y-4 h-full pb-20 justify-end">
               <div className="w-14 h-14 rounded-full border-2 border-dashed border-ivory/30 flex items-center justify-center bg-white/10 select-none backdrop-blur-sm">
-                <span className="text-2xl">{outfit.id === 1 ? '🧥' : outfit.id === 2 ? '👖' : outfit.id === 3 ? '👕' : outfit.id === 4 ? '👖' : '🧥'}</span>
+                <svg className="w-6 h-6 text-ivory/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a3 3 0 00-3 3v.75M12 3a3 3 0 013 3v.75m-6 0h6m-7.5 1.5l7.5-3 7.5 3v11.25a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15.75V5.25z" />
+                </svg>
               </div>
               
               <div className="text-center">

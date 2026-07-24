@@ -53,7 +53,11 @@ export default function ContactSection() {
 
         {submitted ? (
           <div className="contact-animate mt-8 p-6 bg-amber-gold/10 border border-amber-gold/30 rounded-2xl text-center">
-            <span className="text-2xl block mb-2">📬</span>
+            <div className="flex justify-center mb-3">
+              <svg className="w-8 h-8 text-burgundy" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </div>
             <h3 className="font-display font-bold text-burgundy text-sm uppercase tracking-wider">Message Sent</h3>
             <p className="text-xs text-burgundy/80 mt-1">Thank you! We'll reply within 24 hours.</p>
           </div>

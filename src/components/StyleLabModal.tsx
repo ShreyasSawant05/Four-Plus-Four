@@ -108,19 +108,19 @@ export default function StyleLabModal() {
               <ul className="space-y-2.5 text-xs text-text-secondary">
                 <li className="flex justify-between">
                   <span>• Cream cashmere V-neck</span>
-                  <span className="text-text-primary font-medium">Aritzia ($148)</span>
+                  <span className="text-text-primary font-medium">Aritzia (₹148)</span>
                 </li>
                 <li className="flex justify-between">
                   <span>• Bias-cut midi in bronze</span>
-                  <span className="text-text-primary font-medium">Reformation ($198)</span>
+                  <span className="text-text-primary font-medium">Reformation (₹198)</span>
                 </li>
                 <li className="flex justify-between">
                   <span>• Leather ballet flats</span>
-                  <span className="text-text-primary font-medium">Sam Edelman ($128)</span>
+                  <span className="text-text-primary font-medium">Sam Edelman (₹128)</span>
                 </li>
                 <li className="flex justify-between">
                   <span>• Pearl drop earrings</span>
-                  <span className="text-text-primary font-medium">Mejuri ($88)</span>
+                  <span className="text-text-primary font-medium">Mejuri (₹88)</span>
                 </li>
               </ul>
             </div>

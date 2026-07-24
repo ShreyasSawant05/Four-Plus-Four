@@ -60,11 +60,12 @@ export default function ShopModal() {
               className="glass-card p-4 flex flex-col justify-between group hover:border-accent/30"
             >
               <div>
-                <div className="aspect-[3/4] rounded-xl overflow-hidden mb-3 bg-neutral-surface flex flex-col items-center justify-center border border-hairline-border text-burgundy/30 relative">
-                  <span className="text-3xl select-none">🧥</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-burgundy/50 mt-2">
-                    Product Specimen
-                  </span>
+                <div className="aspect-[3/4] rounded-xl overflow-hidden mb-3 bg-neutral-surface border border-hairline-border relative">
+                  <img
+                    src={item.cardImage}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <h4 className="font-display text-base font-semibold text-text-primary mb-1">
                   {item.name}

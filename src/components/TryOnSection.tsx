@@ -41,7 +41,10 @@ export default function TryOnSection({ onTryOnClick }: TryOnSectionProps) {
           {/* Left image preview container */}
           <div className="tryon-animate order-2 lg:order-1">
             <div className="glass-card bg-white/5 border border-white/10 overflow-hidden shadow-soft rounded-3xl relative aspect-[4/3] flex flex-col items-center justify-center text-ivory/30">
-              <span className="text-4xl mb-3">📸</span>
+              <svg className="w-10 h-10 text-ivory/50 mb-3" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316A2.192 2.192 0 0014.502 4h-5c-.75 0-1.437.377-1.837 1.009l-.838 1.366z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+              </svg>
               <span className="font-display text-sm font-semibold tracking-wider uppercase text-ivory/50">Camera Preview</span>
               <span className="text-xs text-ivory/30 mt-1">Pose Detection Box</span>
             </div>

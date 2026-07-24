@@ -5,27 +5,27 @@ import { outfits } from '../data/outfits';
 
 const lookProducts: Record<number, { store: string; name: string; price: string; active?: boolean }[]> = {
   0: [
-    { store: 'Zara', name: 'Shadow Drawcord Hoodie', price: '$85.00', active: true },
-    { store: 'Everlane', name: 'Technical Shell Vest', price: '$100.00' },
+    { store: 'Zara', name: 'Shadow Drawcord Hoodie', price: '₹2,499', active: true },
+    { store: 'Everlane', name: 'Technical Shell Vest', price: '₹2,999' },
   ],
   1: [
-    { store: 'Zara', name: 'Ivory Linen Blazer', price: '$120.00', active: true },
-    { store: 'Reformation', name: 'Silk Camisole', price: '$148.00' },
-    { store: 'COS', name: 'Tailored Trousers', price: '$135.00' },
-    { store: 'Nordstrom', name: 'Leather Sandals', price: '$180.00' },
+    { store: 'Zara', name: 'Ivory Linen Blazer', price: '₹3,499', active: true },
+    { store: 'Reformation', name: 'Silk Camisole', price: '₹4,299' },
+    { store: 'COS', name: 'Tailored Trousers', price: '₹3,999' },
+    { store: 'Nordstrom', name: 'Leather Sandals', price: '₹4,999' },
   ],
   2: [
-    { store: 'Zara', name: 'Neon Track Jacket', price: '$95.00', active: true },
-    { store: 'COS', name: 'Technical Track Pants', price: '$115.00' },
+    { store: 'Zara', name: 'Neon Track Jacket', price: '₹2,799', active: true },
+    { store: 'COS', name: 'Technical Track Pants', price: '₹3,299' },
   ],
   3: [
-    { store: 'Levi\'s', name: 'Stone Wash Trucker Jacket', price: '$95.00', active: true },
-    { store: 'A.P.C.', name: 'Straight Japanese Denim', price: '$120.00' },
+    { store: 'Levi\'s', name: 'Stone Wash Trucker Jacket', price: '₹2,799', active: true },
+    { store: 'A.P.C.', name: 'Straight Japanese Denim', price: '₹3,499' },
   ],
   4: [
-    { store: 'Saint Laurent', name: 'Midnight Silk Bomber', price: '$240.00', active: true },
-    { store: 'COS', name: 'Ribbed Cotton Tee', price: '$45.00' },
-    { store: 'Zara', name: 'Midnight Tailored Jogger', price: '$35.00' },
+    { store: 'Saint Laurent', name: 'Midnight Silk Bomber', price: '₹6,999', active: true },
+    { store: 'COS', name: 'Ribbed Cotton Tee', price: '₹1,299' },
+    { store: 'Zara', name: 'Midnight Tailored Jogger', price: '₹999' },
   ],
 };
 

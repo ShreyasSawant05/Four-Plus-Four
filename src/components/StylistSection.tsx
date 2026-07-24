@@ -27,7 +27,7 @@ export default function StylistSection() {
   const messages = [
     { role: 'user' as const, text: 'I have a wedding next month — warm tones, outdoor, cocktail dress code.' },
     { role: 'ai' as const, text: 'Try a bias-cut midi in bronze or terracotta. Pair with gold strappy heels and your warm autumn palette. Want me to pull three options?' },
-    { role: 'user' as const, text: 'Yes! Under $250 if possible.' },
+    { role: 'user' as const, text: 'Yes! Under ₹5,000 if possible.' },
   ];
 
   return (

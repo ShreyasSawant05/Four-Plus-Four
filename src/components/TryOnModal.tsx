@@ -119,7 +119,9 @@ export default function TryOnModal() {
             />
           ) : (
             <div className="absolute inset-0 bg-burgundy/5 flex flex-col items-center justify-center text-center p-6 space-y-3">
-              <span className="text-5xl animate-pulse select-none filter drop-shadow-md">👤</span>
+              <svg className="w-12 h-12 text-burgundy/60 animate-pulse" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
               <p className="text-burgundy font-bold text-sm">Simulated Body Tracking Space</p>
               <p className="text-burgundy/60 text-xs max-w-xs mx-auto leading-relaxed">
                 Webcam access denied or unavailable. Moving mannequin mock coordinates to test overlay projection.
@@ -171,9 +173,11 @@ export default function TryOnModal() {
                     : 'border-transparent opacity-50 hover:opacity-80'
                 }`}
               >
-                <div className="w-full h-full bg-neutral-surface flex items-center justify-center text-sm border border-hairline-border">
-                  🧥
-                </div>
+                <img
+                  src={outfit.modelImage}
+                  alt={outfit.name}
+                  className="w-full h-full object-cover"
+                />
               </button>
             ))}
           </div>

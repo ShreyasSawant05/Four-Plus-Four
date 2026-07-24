@@ -295,10 +295,26 @@ export default function TimelineCard({
             {/* Right: Visual details */}
             <div className="flex-1 w-full h-[170px] md:h-[260px] grid grid-cols-2 gap-2.5">
               {[
-                { label: 'Luxury Eyewear', icon: '🕶️' },
-                { label: 'Leather Handbag', icon: '👜' },
-                { label: 'Fine Jewelry', icon: '💍' },
-                { label: 'Classic Watch', icon: '⌚' }
+                { label: 'Luxury Eyewear', icon: (
+                  <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                  </svg>
+                ) },
+                { label: 'Leather Handbag', icon: (
+                  <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+                  </svg>
+                ) },
+                { label: 'Fine Jewelry', icon: (
+                  <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499c.153-.338.483-.554.843-.554s.69.216.843.554l1.05 2.317a1.05 1.05 0 00.72.637l2.457.348c.373.053.642.348.694.717a1.05 1.05 0 01-.282.894l-1.854 1.745a1.05 1.05 0 00-.287.886l.487 2.47c.073.37-.087.747-.406.953a1.05 1.05 0 01-.986.046l-2.147-1.173a1.05 1.05 0 00-.986 0l-2.147 1.173a1.05 1.05 0 01-.986-.046c-.319-.206-.479-.583-.406-.953l.487-2.47a1.05 1.05 0 00-.287-.886L5.275 8.995a1.05 1.05 0 01-.282-.894c.052-.369.321-.664.694-.717l2.457-.348a1.05 1.05 0 00.72-.637l1.05-2.317z" />
+                  </svg>
+                ) },
+                { label: 'Classic Watch', icon: (
+                  <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ) }
               ].map((acc, i) => (
                 <motion.div
                   key={acc.label}
@@ -346,9 +362,21 @@ export default function TimelineCard({
             {/* Right: Visual details */}
             <div className="flex-1 w-full h-[170px] md:h-[260px] grid grid-cols-3 gap-2 items-stretch py-1.5">
               {[
-                { label: 'Blazer', price: '$129', icon: '🧥' },
-                { label: 'Trousers', price: '$79', icon: '👖' },
-                { label: 'Bag', price: '$199', icon: '👜' }
+                { label: 'Blazer', price: '₹9,999', icon: (
+                  <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                  </svg>
+                ) },
+                { label: 'Trousers', price: '₹5,999', icon: (
+                  <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a3 3 0 00-3 3v.75M12 3a3 3 0 013 3v.75m-6 0h6m-7.5 1.5l7.5-3 7.5 3v11.25a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15.75V5.25z" />
+                  </svg>
+                ) },
+                { label: 'Bag', price: '₹14,999', icon: (
+                  <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+                  </svg>
+                ) }
               ].map((prod, i) => (
                 <motion.div
                   key={prod.label}
