@@ -27,7 +27,7 @@ export default function TryOnSection({ onTryOnClick }: TryOnSectionProps) {
   }, []);
 
   return (
-    <section ref={sectionRef} id="tryon" className="py-24 md:py-32 bg-burgundy text-ivory relative overflow-hidden">
+    <section ref={sectionRef} id="tryon" className="py-5 sm:py-10 md:py-32 bg-burgundy text-ivory relative overflow-hidden">
       {/* Dynamic background glow */}
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"

@@ -93,9 +93,9 @@ export default function StyleDNASection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="styledna" className="py-24 md:py-32 bg-ivory">
+    <section ref={sectionRef} id="styledna" className="py-5 sm:py-10 md:py-32 bg-ivory">
       <div className="section-wrapper">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-16 items-center">
 
           {/* ── Left Text Column ── */}
           <div className="lg:col-span-6 space-y-6">

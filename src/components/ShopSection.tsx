@@ -11,7 +11,7 @@ export default function ShopSection() {
   return (
     <section ref={sectionRef} id="shop" className="relative bg-ivory border-t border-b border-hairline-border overflow-hidden">
       {/* Scrollable Container wrapper */}
-      <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto relative min-h-screen">
+      <div className="flex flex-col lg:flex-row w-full max-w-[1440px] mx-auto relative lg:min-h-screen">
         {/* Left Dynamic Text (Sticky) */}
         <OutfitDetails />
 

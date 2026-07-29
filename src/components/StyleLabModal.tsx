@@ -40,20 +40,20 @@ export default function StyleLabModal() {
     >
       <div className="fixed inset-0 bg-bg/95 backdrop-blur-2xl" onClick={closeModal} />
 
-      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-3xl p-6 md:p-10 text-text-primary shadow-2xl max-h-[90vh] overflow-y-auto no-scrollbar">
+      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-10 text-text-primary shadow-2xl max-h-[90svh] overflow-y-auto no-scrollbar">
         {/* Header */}
-        <div className="flex items-start justify-between mb-8 border-b border-border-subtle pb-6">
+        <div className="flex items-start justify-between gap-4 mb-6 md:mb-8 border-b border-border-subtle pb-5 md:pb-6">
           <div>
             <span className="text-xs font-semibold text-accent tracking-widest uppercase mb-1 block">
               Style Lab — Vision Engine
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold">
               Turn inspiration <span className="italic font-normal text-text-secondary">into your style.</span>
             </h2>
           </div>
           <button
             onClick={closeModal}
-            className="w-9 h-9 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
+            className="w-9 h-9 flex-shrink-0 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
           >
             ✕
           </button>
@@ -67,7 +67,7 @@ export default function StyleLabModal() {
         {!analyzed ? (
           <div
             onClick={handleUploadSim}
-            className="border-2 border-dashed border-border-medium hover:border-accent/50 rounded-2xl p-8 text-center cursor-pointer bg-bg-elevated/50 transition-all mb-8 group"
+            className="border-2 border-dashed border-border-medium hover:border-accent/50 rounded-2xl p-5 sm:p-8 text-center cursor-pointer bg-bg-elevated/50 transition-all mb-8 group"
           >
             {isAnalyzing ? (
               <div className="flex flex-col items-center">
@@ -106,19 +106,19 @@ export default function StyleLabModal() {
             <div className="p-5 rounded-2xl bg-bg-elevated border border-border-subtle">
               <span className="text-xs text-text-tertiary uppercase tracking-wider block mb-3">Shop the Look Match</span>
               <ul className="space-y-2.5 text-xs text-text-secondary">
-                <li className="flex justify-between">
+                <li className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <span>• Cream cashmere V-neck</span>
                   <span className="text-text-primary font-medium">Aritzia (₹148)</span>
                 </li>
-                <li className="flex justify-between">
+                <li className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <span>• Bias-cut midi in bronze</span>
                   <span className="text-text-primary font-medium">Reformation (₹198)</span>
                 </li>
-                <li className="flex justify-between">
+                <li className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <span>• Leather ballet flats</span>
                   <span className="text-text-primary font-medium">Sam Edelman (₹128)</span>
                 </li>
-                <li className="flex justify-between">
+                <li className="flex flex-col sm:flex-row sm:justify-between gap-1">
                   <span>• Pearl drop earrings</span>
                   <span className="text-text-primary font-medium">Mejuri (₹88)</span>
                 </li>

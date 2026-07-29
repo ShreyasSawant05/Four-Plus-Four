@@ -56,9 +56,9 @@ export default function OutfitCarousel({ scrollContainerRef }: OutfitCarouselPro
   };
 
   return (
-    <div className="w-full lg:w-[32%] h-auto lg:h-screen sticky lg:top-0 flex flex-col justify-center relative bg-ivory py-8 lg:py-0">
+    <div className="w-full lg:w-[32%] h-auto lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center relative bg-ivory py-8 lg:py-0">
       {/* Section label */}
-      <div className="px-6 mb-6">
+      <div className="px-4 sm:px-6 mb-6">
         <p className="font-display text-xs tracking-[0.3em] uppercase text-burgundy/45 font-bold">
           Looks Catalog
         </p>
@@ -75,7 +75,7 @@ export default function OutfitCarousel({ scrollContainerRef }: OutfitCarouselPro
             (cardsRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
           }
         }}
-        className="flex gap-6 overflow-x-auto no-scrollbar px-6 pb-6"
+        className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar px-4 sm:px-6 pb-6 snap-x snap-mandatory"
         id="outfit-carousel"
       >
         {outfits.map((outfit, i) => (
@@ -93,7 +93,7 @@ export default function OutfitCarousel({ scrollContainerRef }: OutfitCarouselPro
       </div>
 
       {/* Scroll hint */}
-      <div className="px-6 mt-4 flex items-center gap-2">
+      <div className="px-4 sm:px-6 mt-4 flex items-center gap-2">
         <div className="h-px flex-1 bg-burgundy/10" />
         <span className="text-xs text-burgundy/30 font-display tracking-widest font-bold">
           SWIPE OR SCROLL →

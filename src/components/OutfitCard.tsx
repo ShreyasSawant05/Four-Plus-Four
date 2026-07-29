@@ -10,7 +10,7 @@ interface OutfitCardProps {
 export default function OutfitCard({ outfit, index, isActive, onClick }: OutfitCardProps) {
   return (
     <div
-      className={`outfit-card flex-shrink-0 w-[240px] md:w-[280px] cursor-pointer group transition-all duration-300 ${
+      className={`outfit-card flex-shrink-0 w-[210px] sm:w-[240px] md:w-[280px] cursor-pointer group transition-all duration-300 snap-center ${
         isActive ? 'scale-[1.02]' : 'scale-100'
       }`}
       onClick={onClick}

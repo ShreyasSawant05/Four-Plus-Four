@@ -242,11 +242,11 @@ export default function StyleQuizModal() {
   return (
     <div
       ref={modalRef}
-      className="fixed inset-0 z-[100] bg-[#FFF9F2] text-[#840B14] overflow-y-auto flex flex-col justify-start items-center p-4 md:p-6 pb-12 font-body"
+      className="fixed inset-0 z-[100] bg-[#FFF9F2] text-[#840B14] overflow-y-auto flex flex-col justify-start items-center p-3 sm:p-4 md:p-6 pb-10 md:pb-12 font-body"
       style={{ opacity: 0 }}
     >
       {/* 1. Brand Floating Header */}
-      <header className="w-full max-w-4xl bg-white border border-[#840B14]/10 rounded-full py-2.5 px-6 md:px-8 shadow-sm flex items-center justify-between mt-2 mb-8 md:mb-12">
+      <header className="w-full max-w-4xl bg-white border border-[#840B14]/10 rounded-2xl sm:rounded-full py-2.5 px-4 sm:px-6 md:px-8 shadow-sm flex items-center justify-between gap-3 mt-2 mb-6 md:mb-12">
         {/* Logo */}
         <div className="flex items-center cursor-pointer" onClick={closeModal}>
           <img src="/logo.png" alt="Four Plus Four" className="h-8 md:h-10 object-contain" />
@@ -273,7 +273,7 @@ export default function StyleQuizModal() {
           <button
             type="button"
             onClick={closeModal}
-            className="bg-[#D51927] hover:bg-[#b0121e] text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-sm transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+            className="bg-[#D51927] hover:bg-[#b0121e] text-white text-xs font-semibold px-3 sm:px-4 py-2 rounded-full flex items-center gap-1.5 shadow-sm transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -302,15 +302,15 @@ export default function StyleQuizModal() {
         )}
 
         {/* 3. The Quiz Card */}
-        <div className="w-full bg-[#FFFBEC] rounded-[32px] border border-[#840B14]/12 p-6 md:p-8 lg:p-12 shadow-[0_16px_40px_rgba(132,11,20,0.05)] flex flex-col justify-between min-h-[440px] relative overflow-hidden transition-all duration-300">
+        <div className="w-full bg-[#FFFBEC] rounded-[24px] md:rounded-[32px] border border-[#840B14]/12 p-4 sm:p-6 md:p-8 lg:p-12 shadow-[0_16px_40px_rgba(132,11,20,0.05)] flex flex-col justify-between min-h-[420px] md:min-h-[440px] relative overflow-hidden transition-all duration-300">
           
           {step <= 8 && currentStepData ? (
             <>
               {/* Question Screen */}
               <div className="flex-1 flex flex-col">
                 {/* Question title */}
-                <div className="mb-8 text-left">
-                  <h2 className="font-display text-2xl md:text-4xl text-[#840B14] font-medium tracking-tight leading-tight">
+                <div className="mb-6 md:mb-8 text-left">
+                  <h2 className="font-display text-[26px] sm:text-3xl md:text-4xl text-[#840B14] font-medium tracking-tight leading-tight">
                     {currentStepData.title}
                   </h2>
                   {currentStepData.subtitle && (
@@ -321,7 +321,7 @@ export default function StyleQuizModal() {
                 </div>
 
                 {/* Options Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
                   {currentStepData.options.map((opt) => {
                     const isSelected = currentStepData.isMulti
                       ? (answers[currentStepData.key] as string[]).includes(opt)
@@ -331,7 +331,7 @@ export default function StyleQuizModal() {
                         key={opt}
                         type="button"
                         onClick={() => handleSelect(currentStepData.key, opt, currentStepData.isMulti)}
-                        className={`w-full text-left font-body text-base py-4 px-8 rounded-full border transition-all duration-200 flex items-center justify-between cursor-pointer ${
+                        className={`w-full text-left font-body text-sm sm:text-base py-3.5 sm:py-4 px-4 sm:px-8 rounded-2xl sm:rounded-full border transition-all duration-200 flex items-center justify-between gap-3 cursor-pointer ${
                           isSelected
                             ? 'bg-[#840B14]/5 border-[#840B14] border-2 font-semibold text-[#840B14] shadow-sm'
                             : 'bg-white border-[#ebd8b7] text-[#840B14] hover:bg-[#FFFBEC] hover:border-[#840B14]/40 shadow-[0_2px_4px_rgba(132,11,20,0.02)]'
@@ -348,7 +348,7 @@ export default function StyleQuizModal() {
               </div>
 
               {/* Card Footer */}
-              <div className="flex items-center justify-between pt-6 border-t border-[#840B14]/10 mt-auto">
+              <div className="flex items-center justify-between gap-3 pt-5 md:pt-6 border-t border-[#840B14]/10 mt-auto">
                 <button
                   type="button"
                   onClick={handleBack}
@@ -364,7 +364,7 @@ export default function StyleQuizModal() {
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="bg-[#D51927] hover:bg-[#b0121e] text-white text-sm font-semibold py-3.5 px-7 rounded-full flex items-center gap-2 shadow-sm transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+                  className="bg-[#D51927] hover:bg-[#b0121e] text-white text-sm font-semibold py-3.5 px-5 sm:px-7 rounded-full flex items-center gap-2 shadow-sm transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
                 >
                   {currentStepData.isMulti ? (step === 8 ? 'Finish' : 'Continue') : 'Skip'}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -377,13 +377,13 @@ export default function StyleQuizModal() {
             /* Results Screen (Step 9) */
             <div className="flex-1 flex flex-col w-full">
               {/* Header */}
-              <div className="text-center py-4 mb-8 style-dna-header">
+              <div className="text-center py-2 md:py-4 mb-6 md:mb-8 style-dna-header">
                 <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#840B14]/10 text-[#840B14] mb-3 text-2xl animate-pulse-soft">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </span>
-                <h2 className="font-display text-3xl md:text-5xl text-[#840B14] font-medium tracking-tight mb-2">
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#840B14] font-medium tracking-tight mb-2">
                   Your Style DNA is Ready!
                 </h2>
                 <p className="text-sm text-[#840B14]/75 max-w-xl mx-auto font-body">
@@ -395,7 +395,7 @@ export default function StyleQuizModal() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
                 
                 {/* Left Column: Style DNA Card */}
-                <div className="lg:col-span-4 flex flex-col bg-white border border-[#840B14]/12 rounded-3xl p-6 shadow-[0_4px_20px_rgba(132,11,20,0.02)] space-y-5 style-dna-card">
+                <div className="lg:col-span-4 flex flex-col bg-white border border-[#840B14]/12 rounded-2xl md:rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(132,11,20,0.02)] space-y-5 style-dna-card">
                   <div className="flex items-center justify-between border-b border-[#840B14]/10 pb-3">
                     <div>
                       <h3 className="font-display text-lg text-[#840B14] font-semibold">Style Twin Profile</h3>
@@ -478,7 +478,7 @@ export default function StyleQuizModal() {
                 {/* Right Column: Curated Closet Showcase */}
                 <div className="lg:col-span-8 space-y-6">
                   {/* Aesthetics Tabs */}
-                  <div className="flex flex-wrap gap-2 border-b border-[#840B14]/10 pb-3 style-dna-tabs">
+                  <div className="flex gap-2 border-b border-[#840B14]/10 pb-3 style-dna-tabs overflow-x-auto no-scrollbar sm:flex-wrap">
                     {selectedAesthetics.map((aes) => {
                       const isActive = activeAestheticTab === aes;
                       return (
@@ -486,7 +486,7 @@ export default function StyleQuizModal() {
                           key={aes}
                           type="button"
                           onClick={() => setActiveAestheticTab(aes)}
-                          className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                          className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap flex-shrink-0 ${
                             isActive
                               ? 'bg-[#840B14] text-white shadow-md'
                               : 'bg-white border border-[#ebd8b7] text-[#840B14]/70 hover:text-[#840B14] hover:border-[#840B14]'
@@ -514,7 +514,7 @@ export default function StyleQuizModal() {
                         }
 
                         return (
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                             {clothes.map((imgSrc, idx) => (
                               <div
                                 key={imgSrc}
@@ -548,7 +548,7 @@ export default function StyleQuizModal() {
               </div>
 
               {/* Footer Actions */}
-              <div className="flex flex-col sm:flex-row items-center justify-end gap-3 pt-6 border-t border-[#840B14]/10 w-full mt-10">
+              <div className="flex flex-col sm:flex-row items-center justify-end gap-3 pt-6 border-t border-[#840B14]/10 w-full mt-8 md:mt-10">
                 <button
                   type="button"
                   onClick={() => {
@@ -588,7 +588,7 @@ export default function StyleQuizModal() {
           {/* Backdrop click close */}
           <div className="absolute inset-0 cursor-default" onClick={() => setSelectedDetailImage(null)} />
           
-          <div className="relative z-10 w-full max-w-4xl bg-[#FFFBEC] border border-[#840B14]/20 rounded-[32px] overflow-hidden shadow-[0_24px_50px_rgba(132,11,20,0.15)] flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]">
+          <div className="relative z-10 w-full max-w-4xl bg-[#FFFBEC] border border-[#840B14]/20 rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_24px_50px_rgba(132,11,20,0.15)] flex flex-col md:flex-row max-h-[90svh] md:max-h-[80vh]">
             
             {/* Close Button */}
             <button
@@ -601,7 +601,7 @@ export default function StyleQuizModal() {
             </button>
 
             {/* Left side: Image View */}
-            <div className="w-full md:w-1/2 bg-white flex items-center justify-center relative min-h-[300px] md:min-h-0 overflow-hidden">
+            <div className="w-full md:w-1/2 bg-white flex items-center justify-center relative min-h-[240px] sm:min-h-[300px] md:min-h-0 overflow-hidden">
               <img
                 src={selectedDetailImage}
                 alt="Selected curation look"
@@ -649,7 +649,7 @@ export default function StyleQuizModal() {
             </div>
 
             {/* Right side: Look details & actions */}
-            <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-between overflow-y-auto">
+            <div className="w-full md:w-1/2 p-5 sm:p-6 md:p-10 flex flex-col justify-between overflow-y-auto">
               <div>
                 <span className="text-[10px] font-bold text-[#DF972B] uppercase tracking-widest block mb-1">
                   Curation Details

@@ -23,7 +23,7 @@ export default function NewsletterSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32">
+    <section ref={sectionRef} className="py-5 sm:py-10 md:py-32">
       <div className="section-wrapper max-w-2xl text-center">
         <h3 className="nl-animate font-display text-2xl md:text-3xl text-text-primary">
           Weekly style edits, straight to your inbox

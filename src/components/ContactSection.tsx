@@ -37,7 +37,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 md:py-32 bg-ivory border-t border-hairline-border">
+    <section ref={sectionRef} id="contact" className="py-5 sm:py-10 md:py-32 bg-ivory border-t border-hairline-border">
       <div className="section-wrapper max-w-xl mx-auto text-center">
         <span className="contact-animate text-burgundy/65 font-body font-bold text-xs tracking-widest uppercase mb-1 block">
           Get in touch

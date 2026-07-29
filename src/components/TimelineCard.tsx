@@ -42,7 +42,7 @@ export default function TimelineCard({
 
   // Responsive vertical offsets (translateY)
   const yRange = isMobile
-    ? ['85vh', '42vh', '0vh', '-42vh', '-85vh']
+    ? ['18vh', '9vh', '0vh', '-9vh', '-18vh']
     : ['110vh', '56vh', '0vh', '-56vh', '-110vh'];
 
   const y = useTransform(smoothProgress, inputRange, yRange);
@@ -398,7 +398,6 @@ export default function TimelineCard({
             </div>
           </>
         );
-
       default:
         return null;
     }
@@ -408,12 +407,13 @@ export default function TimelineCard({
     <motion.div
       style={{
         y,
-        scale,
-        opacity,
+        scale: isMobile ? (isActive ? 1 : 0.96) : scale,
+        opacity: isMobile ? (isActive ? 1 : 0) : opacity,
+        pointerEvents: isActive ? 'auto' : 'none',
       }}
       className={`
-        absolute inset-0 m-auto w-full max-w-[92%] md:max-w-2xl lg:max-w-[700px] h-[420px] md:h-[380px]
-        bg-bg-card border rounded-[32px] p-5 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10
+        absolute inset-0 m-auto w-full max-w-[calc(100vw-2rem)] sm:max-w-[92%] md:max-w-2xl lg:max-w-[700px] h-[390px] sm:h-[410px] md:h-[380px]
+        bg-bg-card border rounded-[24px] md:rounded-[32px] p-4 sm:p-5 md:p-8 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-10
         overflow-hidden select-none transition-all duration-500 ease-out
         ${isActive
           ? 'border-amber-gold/60 shadow-[0_0_30px_rgba(223,151,43,0.35),0_20px_60px_-20px_rgba(132,11,20,0.18)]'

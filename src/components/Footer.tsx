@@ -24,12 +24,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-burgundy text-ivory border-t border-white/10 py-16 md:py-20">
+    <footer className="bg-burgundy text-ivory border-t border-white/10 py-10 sm:py-14 md:py-20">
       <div className="section-wrapper">
         {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {/* Brand column */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <a href="#" className="hover:opacity-85 transition-opacity flex items-center gap-2 mb-3">
               <img src="/logo.png" alt="Four plus Four" className="h-8 object-contain" />
             </a>
@@ -41,10 +41,10 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-xs font-semibold text-ivory/40 tracking-wider uppercase mb-4">
+              <h4 className="text-[11px] sm:text-xs font-semibold text-ivory/40 tracking-wider uppercase mb-3 sm:mb-4">
                 {title}
               </h4>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2 sm:space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>
                     <button
@@ -61,11 +61,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom divider and copyright */}
-        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-8 sm:mt-10 pt-4 sm:pt-5 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4">
           <p className="text-xs text-ivory/40">
             © {new Date().getFullYear()} Four plus Four. All rights reserved.
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-5">
             <a href="#" className="text-xs text-ivory/40 hover:text-ivory/60 transition-colors">
               Privacy
             </a>

@@ -40,20 +40,20 @@ export default function ColorAnalysisModal() {
     >
       <div className="fixed inset-0 bg-bg/95 backdrop-blur-2xl" onClick={closeModal} />
 
-      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-3xl p-6 md:p-10 text-text-primary shadow-2xl max-h-[90vh] overflow-y-auto no-scrollbar">
+      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-10 text-text-primary shadow-2xl max-h-[90svh] overflow-y-auto no-scrollbar">
         {/* Header */}
-        <div className="flex items-start justify-between mb-8 border-b border-border-subtle pb-6">
+        <div className="flex items-start justify-between gap-4 mb-6 md:mb-8 border-b border-border-subtle pb-5 md:pb-6">
           <div>
             <span className="text-xs font-semibold text-accent tracking-widest uppercase mb-1 block">
               Personal Color Analysis
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold">
               Warm Autumn <span className="italic font-normal text-text-secondary">— your season.</span>
             </h2>
           </div>
           <button
             onClick={closeModal}
-            className="w-9 h-9 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
+            className="w-9 h-9 flex-shrink-0 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
           >
             ✕
           </button>
@@ -112,7 +112,7 @@ export default function ColorAnalysisModal() {
         </div>
 
         {/* Avoid list */}
-        <div className="p-4 rounded-xl bg-red-950/20 border border-red-900/30 flex items-center justify-between">
+        <div className="p-4 rounded-xl bg-red-950/20 border border-red-900/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <span className="text-xs text-red-300/80 font-medium">Colors to swap out:</span>
           <div className="flex gap-2 flex-wrap">
             {avoidColors.map((c) => (

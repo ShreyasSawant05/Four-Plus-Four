@@ -64,21 +64,21 @@ export default function StylistModal() {
     >
       <div className="fixed inset-0 bg-bg/95 backdrop-blur-2xl" onClick={closeModal} />
 
-      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-3xl p-6 md:p-8 text-text-primary shadow-2xl flex flex-col h-[85vh]">
+      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 text-text-primary shadow-2xl flex flex-col h-[88svh] md:h-[85vh]">
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-border-subtle flex-shrink-0">
+        <div className="flex items-start sm:items-center justify-between gap-3 pb-4 border-b border-border-subtle flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-accent-muted flex items-center justify-center text-accent font-bold text-xs">
               ✦
             </div>
             <div>
-              <h2 className="font-display text-xl font-semibold">Four Plus Four AI Stylist</h2>
-              <span className="text-xs text-text-tertiary">Personalized fashion recommendations 24/7</span>
+              <h2 className="font-display text-lg sm:text-xl font-semibold">Four Plus Four AI Stylist</h2>
+              <span className="text-[11px] sm:text-xs text-text-tertiary">Personalized fashion recommendations 24/7</span>
             </div>
           </div>
           <button
             onClick={closeModal}
-            className="w-8 h-8 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary"
+            className="w-8 h-8 flex-shrink-0 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary"
           >
             ✕
           </button>
@@ -137,7 +137,7 @@ export default function StylistModal() {
             e.preventDefault();
             handleSend();
           }}
-          className="mt-2 flex gap-2 flex-shrink-0"
+          className="mt-2 flex flex-col sm:flex-row gap-2 flex-shrink-0"
         >
           <input
             type="text"
@@ -146,7 +146,7 @@ export default function StylistModal() {
             placeholder="Ask about outfits, colors, occasions..."
             className="flex-1 bg-bg-elevated border border-border-subtle rounded-full px-4 py-2.5 text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent/50"
           />
-          <button type="submit" className="btn-primary text-xs px-5">
+          <button type="submit" className="btn-primary text-xs px-5 w-full sm:w-auto">
             Send
           </button>
         </form>

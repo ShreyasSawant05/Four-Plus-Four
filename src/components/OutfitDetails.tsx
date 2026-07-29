@@ -51,7 +51,7 @@ export default function OutfitDetails() {
   return (
     <div
       ref={containerRef}
-      className="w-full lg:w-[28%] h-auto lg:h-screen sticky lg:top-0 flex flex-col justify-center px-6 md:px-10 py-8 lg:py-16 bg-ivory"
+      className="w-full lg:w-[28%] h-auto lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center px-4 sm:px-6 md:px-10 py-4 sm:py-8 lg:py-16 bg-ivory"
       style={{ opacity: 0 }}
     >
       <div className="space-y-6">
@@ -87,7 +87,7 @@ export default function OutfitDetails() {
           {items.map((prod, idx) => (
             <div
               key={idx}
-              className="flex items-center justify-between p-2.5 rounded-xl bg-card-surface border border-hairline-border shadow-sm text-xs"
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-2.5 rounded-xl bg-card-surface border border-hairline-border shadow-sm text-xs"
             >
               <div className="flex items-center gap-2">
                 <span className="text-burgundy font-bold">✓</span>
@@ -96,7 +96,7 @@ export default function OutfitDetails() {
                   <span className="text-burgundy font-medium truncate">{prod.name}</span>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 self-end sm:self-auto">
                 <span className="font-bold text-burgundy">{prod.price}</span>
                 {prod.active && (
                   <span className="bg-amber-gold text-burgundy text-[8px] font-bold uppercase px-1.5 py-0.5 rounded border border-burgundy/10">

@@ -15,6 +15,13 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+  }
+
   body {
     overflow-x: hidden;
     min-height: 100vh;
@@ -51,7 +58,7 @@
   /* Primary Action Button — Burgundy color #840B14 with Ivory text */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2
-           px-7 py-3.5 rounded-full
+           px-5 sm:px-7 py-3.5 rounded-full
            bg-burgundy text-ivory
            font-body font-medium text-sm tracking-wide
            transition-all duration-300 ease-out;
@@ -64,7 +71,7 @@
   /* Secondary / outline button */
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2
-           px-7 py-3.5 rounded-full
+           px-5 sm:px-7 py-3.5 rounded-full
            bg-card-surface border border-hairline-border
            text-burgundy
            font-body font-medium text-sm tracking-wide
@@ -114,12 +121,18 @@
 
   /* Section wrapper */
   .section-wrapper {
-    @apply max-w-[1200px] mx-auto px-5 md:px-8 lg:px-12;
+    @apply w-full max-w-[1200px] mx-auto px-4 sm:px-5 md:px-8 lg:px-12;
   }
 
   /* Divider */
   .divider {
     @apply w-full h-px bg-hairline-border;
+  }
+
+  @media (max-width: 767px) {
+    section {
+      @apply py-5;
+    }
   }
 }
 
@@ -165,5 +178,4 @@ a[href*="elfsight"],
   pointer-events: none !important;
   visibility: hidden !important;
 }
-
 

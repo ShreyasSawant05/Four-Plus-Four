@@ -56,14 +56,14 @@ export default function TryOnModal() {
       />
 
       {/* Modal content */}
-      <div className="relative z-10 w-full max-w-4xl mx-4 flex flex-col items-center max-h-[95vh] overflow-y-auto no-scrollbar px-2 py-1">
+      <div className="relative z-10 w-full max-w-4xl mx-3 sm:mx-4 flex flex-col items-center max-h-[95svh] overflow-y-auto no-scrollbar px-1 sm:px-2 py-1">
         {/* Header */}
-        <div className="w-full flex items-center justify-between mb-6">
+        <div className="w-full flex items-start justify-between gap-4 mb-5 md:mb-6">
           <div>
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-text-primary">
+            <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary">
               Virtual Try-On
             </h2>
-            <p className="text-text-secondary text-sm mt-1">
+            <p className="text-text-secondary text-xs sm:text-sm mt-1">
               Position yourself in frame — the garment will map to your body
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function TryOnModal() {
             type="button"
             id="tryon-close"
             onClick={handleClose}
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-bg-card border border-border-subtle text-text-secondary hover:text-text-primary hover:border-border-medium transition-all"
+            className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-bg-card border border-border-subtle text-text-secondary hover:text-text-primary hover:border-border-medium transition-all"
             aria-label="Close try-on"
           >
             <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
@@ -81,7 +81,7 @@ export default function TryOnModal() {
         </div>
 
         {/* Video container */}
-        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border-subtle bg-bg-card">
+        <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-border-subtle bg-bg-card">
           {/* Loading state */}
           {isModelLoading && (
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-bg-card">

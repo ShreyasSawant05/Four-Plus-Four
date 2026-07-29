@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import TimelineSection from './components/TimelineSection';
@@ -22,6 +23,13 @@ import StyleQuizModal from './components/StyleQuizModal';
 import ShopModal from './components/ShopModal';
 
 function App() {
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-bg">
       <Navbar />

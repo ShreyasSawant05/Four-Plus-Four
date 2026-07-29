@@ -37,27 +37,27 @@ export default function BodyAnalysisModal() {
     >
       <div className="fixed inset-0 bg-bg/95 backdrop-blur-2xl" onClick={closeModal} />
 
-      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-3xl p-6 md:p-10 text-text-primary shadow-2xl max-h-[90vh] overflow-y-auto no-scrollbar">
+      <div className="relative z-10 w-full max-w-2xl bg-bg-card border border-border-medium rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-10 text-text-primary shadow-2xl max-h-[90svh] overflow-y-auto no-scrollbar">
         {/* Header */}
-        <div className="flex items-start justify-between mb-8 border-b border-border-subtle pb-6">
+        <div className="flex items-start justify-between gap-4 mb-6 md:mb-8 border-b border-border-subtle pb-5 md:pb-6">
           <div>
             <span className="text-xs font-semibold text-accent tracking-widest uppercase mb-1 block">
               Personal Silhouette Guide
             </span>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold">
               Inverted Triangle <span className="italic font-normal text-text-secondary">— proportion breakdown.</span>
             </h2>
           </div>
           <button
             onClick={closeModal}
-            className="w-9 h-9 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
+            className="w-9 h-9 flex-shrink-0 rounded-full bg-bg-elevated border border-border-subtle flex items-center justify-center text-text-secondary hover:text-text-primary transition-colors"
           >
             ✕
           </button>
         </div>
 
         {/* Proportions metrics */}
-        <div className="grid grid-cols-3 gap-3 mb-8 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 text-center">
           <div className="p-4 rounded-2xl bg-bg-elevated border border-border-subtle">
             <span className="text-xs text-text-tertiary uppercase block mb-1">Shoulders</span>
             <span className="text-lg font-semibold text-text-primary">Broad</span>
@@ -83,7 +83,7 @@ export default function BodyAnalysisModal() {
               className="p-4 rounded-2xl bg-bg-elevated border border-border-subtle flex items-start justify-between gap-4"
             >
               <div>
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex flex-wrap items-center gap-2 mb-1">
                   <h4 className="text-sm font-semibold text-text-primary">{item.title}</h4>
                   <span className="text-[10px] uppercase font-semibold px-2 py-0.5 rounded bg-accent/20 text-accent">
                     {item.tag}

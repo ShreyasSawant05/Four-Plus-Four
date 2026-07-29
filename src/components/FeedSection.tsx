@@ -25,10 +25,10 @@ export default function FeedSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="feed" className="py-24 md:py-32 bg-ivory">
+    <section ref={sectionRef} id="feed" className="py-5 sm:py-10 md:py-32 bg-ivory">
       <div className="section-wrapper">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 md:mb-10 space-y-4 md:space-y-0">
           <div>
             <div className="feed-animate inline-flex mb-1">
               <span className="text-burgundy/65 font-body font-bold text-xs tracking-widest uppercase">
@@ -46,11 +46,11 @@ export default function FeedSection() {
         </div>
 
         {/* Category filter chips */}
-        <div className="feed-animate flex flex-wrap gap-2 mb-8 text-xs font-semibold">
+        <div className="feed-animate flex gap-2 mb-8 text-xs font-semibold overflow-x-auto no-scrollbar sm:flex-wrap -mx-4 px-4 sm:mx-0 sm:px-0">
           {['All', 'Coquette', 'Grunge', 'Minimalist', 'Quiet Luxury', 'Techwear', 'Clean Girl', 'Dark Academy'].map((tag, idx) => (
             <button
               key={tag}
-              className={`px-4 py-2 rounded-full border transition-all ${
+              className={`px-4 py-2 rounded-full border transition-all whitespace-nowrap flex-shrink-0 ${
                 idx === 0
                   ? 'bg-burgundy text-ivory border-burgundy'
                   : 'bg-white/40 text-burgundy/80 border-hairline-border hover:bg-white/70'
@@ -62,7 +62,7 @@ export default function FeedSection() {
         </div>
 
         {/* Outfit grid (8 items) */}
-        <div className="feed-animate grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="feed-animate grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {[
             { aesthetic: 'Coquette', color: '#FEA3DC', tag: 'Ribbon Trim', img: '/outfits/Coquette/WhatsApp Image 2026-07-16 at 10.24.35 PM.jpeg' },
             { aesthetic: 'Minimalist', color: '#F6E6B6', tag: 'Clean Cuffs', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&auto=format&fit=crop&q=80' },

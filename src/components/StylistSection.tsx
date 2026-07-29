@@ -31,7 +31,7 @@ export default function StylistSection() {
   ];
 
   return (
-    <section ref={sectionRef} id="stylist" className="py-24 md:py-32">
+    <section ref={sectionRef} id="stylist" className="py-5 sm:py-10 md:py-32">
       <div className="section-wrapper">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left text */}

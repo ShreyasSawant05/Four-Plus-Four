@@ -47,9 +47,9 @@ export default function FAQSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32">
+    <section ref={sectionRef} className="py-5 sm:py-10 md:py-32">
       <div className="section-wrapper max-w-3xl">
-        <h2 className="faq-animate font-display text-section text-text-primary text-center mb-14">
+        <h2 className="faq-animate font-display text-section text-text-primary text-center mb-5 md:mb-14">
           Everything you might wonder.
         </h2>
 

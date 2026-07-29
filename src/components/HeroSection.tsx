@@ -67,7 +67,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-ivory"
+      className="relative pt-24 pb-8 sm:pt-28 md:pt-24 md:pb-16 md:min-h-[100svh] flex items-center justify-center overflow-hidden bg-ivory"
     >
       {/* Background radial highlight */}
       <div
@@ -77,16 +77,16 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="section-wrapper relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="section-wrapper relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-center">
         {/* Left Column (Text & Inputs) */}
-        <div className="lg:col-span-7 flex flex-col text-left space-y-6">
+        <div className="lg:col-span-7 flex flex-col text-left space-y-3 sm:space-y-4 md:space-y-6">
           <div className="hero-animate inline-flex">
             <span className="text-burgundy/65 font-body font-bold text-xs tracking-widest uppercase">
               Style DNA Wardrobe Finder
             </span>
           </div>
 
-          <h1 className="hero-animate font-display text-[42px] md:text-[56px] lg:text-[68px] leading-[1.05] text-burgundy font-bold tracking-tight">
+          <h1 className="hero-animate font-display text-[38px] sm:text-[42px] md:text-[56px] lg:text-[68px] leading-[1.05] text-burgundy font-bold tracking-tight">
             I'll finally know what suits me.
           </h1>
 
@@ -96,7 +96,7 @@ export default function HeroSection() {
 
           {/* Search/Generator Input */}
           <div className="hero-animate flex flex-col sm:flex-row items-center gap-2 p-1.5 rounded-2xl md:rounded-full bg-white/70 border border-hairline-border shadow-soft w-full max-w-lg">
-            <div className="flex-1 w-full flex items-center gap-2 px-3">
+            <div className="flex-1 w-full flex items-center gap-2 px-3 min-h-11">
               <input
                 type="text"
                 placeholder={currentPlaceholder}
@@ -126,7 +126,7 @@ export default function HeroSection() {
           </div>
 
           {/* Reviews Rating Block */}
-          <div className="hero-animate flex items-center gap-3 pt-4">
+          <div className="hero-animate flex items-center gap-3 pt-3 md:pt-4">
             <div className="flex -space-x-2">
               {[
                 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80',
@@ -149,8 +149,8 @@ export default function HeroSection() {
         </div>
 
         {/* Right Column (Minimalist Stock Lookbook Card) */}
-        <div className="lg:col-span-5 relative w-full aspect-[4/5] max-w-[380px] mx-auto flex items-center justify-center lg:justify-end hero-animate">
-          <div className="w-[90%] aspect-[3/4] rounded-3xl bg-neutral-surface/30 border border-hairline-border/80 relative flex flex-col items-center justify-center text-burgundy/40 overflow-hidden shadow-soft group">
+        <div className="lg:col-span-5 relative w-full aspect-[4/5] max-w-[300px] sm:max-w-[340px] lg:max-w-[380px] mx-auto flex items-center justify-center lg:justify-end hero-animate">
+          <div className="w-full sm:w-[90%] aspect-[3/4] rounded-3xl bg-neutral-surface/30 border border-hairline-border/80 relative flex flex-col items-center justify-center text-burgundy/40 overflow-hidden shadow-soft group">
             <img 
               src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80" 
               alt="Studio Lookbook" 

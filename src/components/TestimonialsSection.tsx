@@ -20,6 +20,11 @@ const testimonials = [
     author: 'Emma R.',
     detail: 'Light Summer · Rectangle',
   },
+  {
+    quote: 'The AI stylist recommendations matched my exact aesthetic perfectly.',
+    author: 'Ananya S.',
+    detail: 'Soft Autumn · Pear Shape',
+  },
 ];
 
 export default function TestimonialsSection() {
@@ -41,23 +46,25 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32">
+    <section ref={sectionRef} className="py-6 sm:py-10 md:py-32">
       <div className="section-wrapper">
-        <h2 className="test-animate font-display text-section text-text-primary text-center mb-14">
+        <h2 className="test-animate font-display text-section text-text-primary text-center mb-6 md:mb-14">
           Real style twins, <span className="italic">real transformations.</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
           {testimonials.map((t) => (
-            <div key={t.author} className="test-animate glass-card p-6 md:p-8 flex flex-col">
-              {/* Quote mark */}
-              <span className="text-accent text-3xl font-display leading-none mb-4">"</span>
-              <p className="text-text-secondary text-sm leading-relaxed flex-1">
-                {t.quote}
-              </p>
-              <div className="mt-6 pt-4 border-t border-border-subtle">
-                <p className="text-text-primary text-sm font-medium">{t.author}</p>
-                <p className="text-text-tertiary text-xs mt-0.5">{t.detail}</p>
+            <div key={t.author} className="test-animate glass-card p-3.5 sm:p-5 md:p-8 flex flex-col justify-between">
+              <div>
+                {/* Quote mark */}
+                <span className="text-accent text-2xl sm:text-3xl font-display leading-none mb-2 block">"</span>
+                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
+                  {t.quote}
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-border-subtle">
+                <p className="text-text-primary text-xs sm:text-sm font-medium">{t.author}</p>
+                <p className="text-text-tertiary text-[10px] sm:text-xs mt-0.5">{t.detail}</p>
               </div>
             </div>
           ))}

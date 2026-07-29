@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -22,11 +22,11 @@ export default function InstagramSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="instagram" className="py-24 md:py-32 bg-ivory">
+    <section ref={sectionRef} id="instagram" className="py-5 sm:py-10 md:py-32 bg-ivory">
       <div className="section-wrapper">
 
         {/* Header */}
-        <div className="insta-animate flex flex-col items-center text-center mb-10 space-y-3">
+        <div className="insta-animate flex flex-col items-center text-center mb-5 md:mb-10 space-y-3">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center shadow-md">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>

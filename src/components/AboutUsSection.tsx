@@ -40,7 +40,7 @@ export default function AboutUsSection() {
     <section
       ref={sectionRef}
       id="about"
-      className="py-24 md:py-32 bg-burgundy text-ivory relative overflow-hidden border-t border-b border-white/10"
+      className="py-5 sm:py-10 md:py-32 bg-burgundy text-ivory relative overflow-hidden border-t border-b border-white/10"
     >
       {/* Background soft blush radial light */}
       <div
@@ -75,11 +75,11 @@ export default function AboutUsSection() {
           </div>
 
           {/* Founders Column — tall portrait cards */}
-          <div className="lg:col-span-7 grid grid-cols-3 gap-4 md:gap-6 justify-items-center">
+          <div className="lg:col-span-7 grid grid-cols-3 gap-2 sm:gap-3 md:gap-6 justify-items-center">
             {founders.map((founder) => (
               <div
                 key={founder.name}
-                className="about-animate group relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-xl"
+                className="about-animate group relative w-full aspect-[4/5] sm:aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl"
               >
                 <img
                   src={founder.photo}
@@ -89,11 +89,11 @@ export default function AboutUsSection() {
                 {/* Dark gradient overlay at bottom for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 {/* Name pinned to bottom */}
-                <div className="absolute bottom-0 inset-x-0 p-4">
-                  <h3 className="text-sm md:text-base font-display font-bold text-white tracking-wide leading-none">
+                <div className="absolute bottom-0 inset-x-0 p-2 sm:p-4">
+                  <h3 className="text-[11px] sm:text-sm md:text-base font-display font-bold text-white tracking-wide leading-none">
                     {founder.name}
                   </h3>
-                  <span className="mt-1.5 block w-6 h-px bg-amber-gold/80" />
+                  <span className="mt-1 block sm:mt-1.5 w-4 sm:w-6 h-px bg-amber-gold/80" />
                 </div>
               </div>
             ))}
