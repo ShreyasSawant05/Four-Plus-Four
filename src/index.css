@@ -155,3 +155,15 @@
     animation: scanLine 2.5s ease-in-out infinite;
   }
 }
+
+/* Hide Elfsight watermark/attribution link only */
+a[href*="elfsight.com"],
+a[href*="elfsight"],
+[class*="eapps-widget-toolbar"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+

@@ -51,7 +51,7 @@ export default function AboutUsSection() {
       />
 
       <div className="section-wrapper relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
           
           {/* Story Column */}
           <div className="lg:col-span-5 space-y-6 text-left lg:pt-6">
@@ -75,16 +75,16 @@ export default function AboutUsSection() {
           </div>
 
           {/* Founders Column — tall portrait cards */}
-          <div className="lg:col-span-7 grid grid-cols-3 gap-4 md:gap-5">
+          <div className="lg:col-span-7 grid grid-cols-3 gap-4 md:gap-6 justify-items-center">
             {founders.map((founder) => (
               <div
                 key={founder.name}
-                className="about-animate group relative aspect-[2/3] rounded-2xl overflow-hidden shadow-xl"
+                className="about-animate group relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-xl"
               >
                 <img
                   src={founder.photo}
                   alt={founder.name}
-                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out select-none"
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out select-none"
                 />
                 {/* Dark gradient overlay at bottom for text legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />

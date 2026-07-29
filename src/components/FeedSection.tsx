@@ -64,7 +64,7 @@ export default function FeedSection() {
         {/* Outfit grid (8 items) */}
         <div className="feed-animate grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[
-            { aesthetic: 'Coquette', color: '#FEA3DC', tag: 'Ribbon Trim', img: 'https://images.unsplash.com/photo-1576188973526-0e5d70b7dd0e?w=500&auto=format&fit=crop&q=80' },
+            { aesthetic: 'Coquette', color: '#FEA3DC', tag: 'Ribbon Trim', img: '/outfits/Coquette/WhatsApp Image 2026-07-16 at 10.24.35 PM.jpeg' },
             { aesthetic: 'Minimalist', color: '#F6E6B6', tag: 'Clean Cuffs', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&auto=format&fit=crop&q=80' },
             { aesthetic: 'Quiet Luxury', color: '#FFFBEC', tag: 'Tailored Silk', img: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=500&auto=format&fit=crop&q=80' },
             { aesthetic: 'Techwear', color: '#7A5A1B', tag: 'Cargo Shell', img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&auto=format&fit=crop&q=80' },
