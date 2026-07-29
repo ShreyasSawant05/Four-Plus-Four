@@ -7,6 +7,7 @@ import ShopSection from './components/ShopSection';
 import FeedSection from './components/FeedSection';
 import StylistSection from './components/StylistSection';
 import TestimonialsSection from './components/TestimonialsSection';
+import InstagramSection from './components/InstagramSection';
 import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -68,7 +69,12 @@ function App() {
 
         <div className="section-wrapper"><div className="divider" /></div>
         
-        {/* 10. FAQs (Accordion) */}
+        {/* 10. Instagram Feed */}
+        <InstagramSection />
+
+        <div className="section-wrapper"><div className="divider" /></div>
+        
+        {/* 11. FAQs (Accordion) */}
         <FAQSection />
 
         <div className="section-wrapper"><div className="divider" /></div>

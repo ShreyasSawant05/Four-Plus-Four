@@ -107,9 +107,13 @@ export default function StyleDNASection() {
 
               {/* Recommendation thumbnail stack */}
               <div className="grid grid-cols-3 gap-3 pt-4 border-t border-hairline-border">
-                {[1, 2, 3].map((item) => (
-                  <div key={item} className="aspect-[3/4] bg-neutral-surface rounded-xl flex items-center justify-center border border-hairline-border text-[10px] text-burgundy/40 font-semibold uppercase tracking-wider">
-                    Item {item}
+                {['/outfits/card-1.png', '/outfits/card-2.png', '/outfits/card-3.png'].map((src, i) => (
+                  <div key={i} className="aspect-[3/4] rounded-xl overflow-hidden border border-hairline-border shadow-sm">
+                    <img
+                      src={src}
+                      alt={`Style pick ${i + 1}`}
+                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                 ))}
               </div>

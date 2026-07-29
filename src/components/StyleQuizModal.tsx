@@ -254,7 +254,7 @@ export default function StyleQuizModal() {
               <path d="M12 2l2.5 7.5H22l-6.2 4.5 2.4 7.5-6.2-4.5-6.2 4.5 2.4-7.5-6.2-4.5h7.5z" />
             </svg>
           </div>
-          <span className="font-display text-xl font-bold text-[#840B14] tracking-tight">Muse.</span>
+          <span className="font-display text-xl font-bold text-[#840B14] tracking-tight">Four Plus Four</span>
         </div>
 
         {/* Center Navigation Links */}
@@ -310,6 +310,18 @@ export default function StyleQuizModal() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
           </div>
+
+          {/* Exit to Home */}
+          <button
+            type="button"
+            onClick={closeModal}
+            className="flex items-center gap-1.5 text-[11px] font-semibold text-[#840B14]/70 hover:text-[#840B14] border border-[#840B14]/20 hover:border-[#840B14]/50 rounded-full px-3 py-1.5 transition-all duration-200 hover:bg-[#840B14]/5"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            Exit
+          </button>
         </div>
       </header>
 
