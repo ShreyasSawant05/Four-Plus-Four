@@ -45,21 +45,7 @@ export default function FeedSection() {
           </button>
         </div>
 
-        {/* Category filter chips */}
-        <div className="feed-animate flex gap-2 mb-8 text-xs font-semibold overflow-x-auto no-scrollbar sm:flex-wrap -mx-4 px-4 sm:mx-0 sm:px-0">
-          {['All', 'Coquette', 'Grunge', 'Minimalist', 'Quiet Luxury', 'Techwear', 'Clean Girl', 'Dark Academy'].map((tag, idx) => (
-            <button
-              key={tag}
-              className={`px-4 py-2 rounded-full border transition-all whitespace-nowrap flex-shrink-0 ${
-                idx === 0
-                  ? 'bg-burgundy text-ivory border-burgundy'
-                  : 'bg-white/40 text-burgundy/80 border-hairline-border hover:bg-white/70'
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
+
 
         {/* Outfit grid (8 items) */}
         <div className="feed-animate grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">

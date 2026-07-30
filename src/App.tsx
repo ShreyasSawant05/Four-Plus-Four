@@ -19,7 +19,6 @@ import ColorAnalysisModal from './components/ColorAnalysisModal';
 import BodyAnalysisModal from './components/BodyAnalysisModal';
 import StyleLabModal from './components/StyleLabModal';
 import StylistModal from './components/StylistModal';
-import StyleQuizModal from './components/StyleQuizModal';
 import ShopModal from './components/ShopModal';
 
 function App() {
@@ -100,7 +99,6 @@ function App() {
       <BodyAnalysisModal />
       <StyleLabModal />
       <StylistModal />
-      <StyleQuizModal />
       <ShopModal />
     </div>
   );

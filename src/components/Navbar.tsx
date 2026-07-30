@@ -5,11 +5,13 @@ import { useOutfitStore, type ModalType } from '../store/useOutfitStore';
 
 export default function Navbar() {
   const setActiveModal = useOutfitStore((s) => s.setActiveModal);
+  const closeModal = useOutfitStore((s) => s.closeModal);
   const navRef = useRef<HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems: { label: string; modal?: ModalType; targetId?: string }[] = [
     { label: 'Discover', targetId: 'feed' },
+    { label: 'Style DNA', targetId: 'styledna' },
     { label: 'Virtual Try-On', modal: 'try-on' },
     { label: 'Color Match', modal: 'color' },
     { label: 'Body Insights', modal: 'body' },
@@ -29,11 +31,24 @@ export default function Navbar() {
 
   const handleClick = (item: typeof navItems[0]) => {
     setMobileOpen(false);
-    if (item.modal) {
+    closeModal();
+
+    if (item.targetId) {
+      setTimeout(() => {
+        const el = document.getElementById(item.targetId!);
+        if (el) {
+          const navOffset = 80;
+          const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - navOffset;
+
+          window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth',
+          });
+        }
+      }, 50);
+    } else if (item.modal) {
       setActiveModal(item.modal);
-    } else if (item.targetId) {
-      const el = document.getElementById(item.targetId);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

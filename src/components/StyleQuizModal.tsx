@@ -471,7 +471,7 @@ export default function StyleQuizModal() {
                   {/* Stamp Seal */}
                   <div className="pt-4 border-t border-[#840B14]/10 flex items-center justify-between text-[11px] text-[#840B14]/55 font-medium">
                     <span>Generated on {new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                    <span className="font-bold text-[#DF972B] tracking-widest uppercase">MUSE VERIFIED</span>
+                    <span className="font-bold text-[#DF972B] tracking-widest uppercase">VERIFIED</span>
                   </div>
                 </div>
 
