@@ -11,9 +11,18 @@ export default function Footer() {
     else if (key.includes('style dna')) setActiveModal('quiz');
     else if (key.includes('feed') || key.includes('trending') || key.includes('aesthetics')) {
       const el = document.getElementById('feed');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
     } else {
-      setActiveModal('shop');
+      const el = document.getElementById('shop');
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      } else {
+        setActiveModal('shop');
+      }
     }
   };
 
@@ -24,16 +33,16 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-burgundy text-ivory border-t border-white/10 py-10 sm:py-14 md:py-20">
+    <footer className="bg-white text-burgundy border-t border-hairline-border py-10 sm:py-14 md:py-20">
       <div className="section-wrapper">
         {/* Top row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="hover:opacity-85 transition-opacity flex items-center gap-2 mb-3">
-              <img src="/logo.png" alt="Four plus Four" className="h-8 object-contain" />
+              <img src="/logo.png" alt="Four plus Four" className="h-12 object-contain" />
             </a>
-            <p className="mt-3 text-ivory/60 text-xs leading-relaxed max-w-xs">
+            <p className="mt-3 text-burgundy/70 text-xs leading-relaxed max-w-xs font-body">
               Four plus Four (4+4) — Your AI Fashion Twin. Discover, analyze, style, try on, and shop — all in one place.
             </p>
           </div>
@@ -41,7 +50,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-[11px] sm:text-xs font-semibold text-ivory/40 tracking-wider uppercase mb-3 sm:mb-4">
+              <h4 className="text-[11px] sm:text-xs font-bold text-burgundy/50 tracking-wider uppercase mb-3 sm:mb-4">
                 {title}
               </h4>
               <ul className="space-y-2 sm:space-y-2.5">
@@ -49,7 +58,7 @@ export default function Footer() {
                   <li key={link}>
                     <button
                       onClick={() => handleLinkClick(link)}
-                      className="text-xs text-ivory/80 hover:text-ivory transition-colors duration-200 text-left"
+                      className="text-xs text-burgundy/85 hover:text-[#d51927] transition-colors duration-200 text-left font-medium cursor-pointer"
                     >
                       {link}
                     </button>
@@ -61,18 +70,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom divider and copyright */}
-        <div className="mt-8 sm:mt-10 pt-4 sm:pt-5 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4">
-          <p className="text-xs text-ivory/40">
+        <div className="mt-8 sm:mt-10 pt-4 sm:pt-5 border-t border-hairline-border flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4">
+          <p className="text-xs text-burgundy/50 font-body">
             © {new Date().getFullYear()} Four plus Four. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-3 sm:gap-5">
-            <a href="#" className="text-xs text-ivory/40 hover:text-ivory/60 transition-colors">
+            <a href="#" className="text-xs text-burgundy/50 hover:text-burgundy transition-colors">
               Privacy
             </a>
-            <a href="#" className="text-xs text-ivory/40 hover:text-ivory/60 transition-colors">
+            <a href="#" className="text-xs text-burgundy/50 hover:text-burgundy transition-colors">
               Terms
             </a>
-            <a href="#" className="text-xs text-ivory/40 hover:text-ivory/60 transition-colors">
+            <a href="#" className="text-xs text-burgundy/50 hover:text-burgundy transition-colors">
               Cookies
             </a>
           </div>
