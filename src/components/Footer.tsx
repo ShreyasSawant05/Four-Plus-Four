@@ -39,8 +39,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#" className="hover:opacity-85 transition-opacity flex items-center gap-2 mb-3">
-              <img src="/logo.png" alt="Four plus Four" className="h-12 object-contain" />
+            <a href="#" className="hover:opacity-85 transition-opacity inline-flex items-center gap-2 mb-3">
+              <img src="/logo.png" alt="Four plus Four" className="h-16 sm:h-20 object-contain" />
             </a>
             <p className="mt-3 text-burgundy/70 text-xs leading-relaxed max-w-xs font-body">
               Four plus Four (4+4) — Your AI Fashion Twin. Discover, analyze, style, try on, and shop — all in one place.
