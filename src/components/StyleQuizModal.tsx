@@ -174,7 +174,7 @@ export default function StyleQuizModal() {
     {
       key: 'budget' as keyof Answers,
       title: 'Comfort budget per piece',
-      options: ['Under ₹1,000', '₹1,000–₹3,000', '₹3,000–₹8,000', '₹8,000+'],
+      options: ['₹2,000–₹3,000', '₹3,000–₹4,500', '₹4,500–₹6,000'],
       percentage: 75,
       isMulti: false,
     },

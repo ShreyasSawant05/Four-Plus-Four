@@ -14,7 +14,10 @@ export default function TryOnModal() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const { videoRef, poseData, isModelLoading, error, isSimulating } = usePoseDetection(tryOnActive);
 
+  const customTryOnImage = useOutfitStore((s) => s.customTryOnImage);
   const currentOutfit = outfits[activeIndex];
+  const activeGarment = customTryOnImage || currentOutfit?.garmentImage || currentOutfit?.modelImage || '/outfits/card-1.png';
+
 
   useEffect(() => {
     if (!overlayRef.current) return;
@@ -135,7 +138,7 @@ export default function TryOnModal() {
               ...poseData,
               isSimulated: isSimulating
             } as any}
-            garmentImage={currentOutfit.garmentImage}
+            garmentImage={activeGarment}
             videoWidth={640}
             videoHeight={480}
           />

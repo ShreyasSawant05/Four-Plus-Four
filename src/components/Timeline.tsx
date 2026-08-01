@@ -258,9 +258,9 @@ function MobileTimeline() {
         <div className="mt-3 space-y-2">
           <div className="grid grid-cols-3 gap-1.5">
             {[
-              { item: 'Blazer', price: '₹9,999' },
-              { item: 'Trousers', price: '₹5,999' },
-              { item: 'Bag', price: '₹14,999' },
+              { item: 'Blazer', price: '₹4,999' },
+              { item: 'Trousers', price: '₹3,499' },
+              { item: 'Bag', price: '₹5,899' },
             ].map((p) => (
               <div key={p.item} className="p-2 rounded-xl bg-white/60 border border-hairline-border text-center">
                 <span className="text-[9px] uppercase font-bold text-burgundy/50 block truncate">{p.item}</span>

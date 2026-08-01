@@ -13,6 +13,9 @@ import FAQSection from './components/FAQSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
+// Shopping Page View
+import ShoppingPage from './components/ShoppingPage';
+
 // Modals
 import TryOnModal from './components/TryOnModal';
 import ColorAnalysisModal from './components/ColorAnalysisModal';
@@ -20,8 +23,11 @@ import BodyAnalysisModal from './components/BodyAnalysisModal';
 import StyleLabModal from './components/StyleLabModal';
 import StylistModal from './components/StylistModal';
 import ShopModal from './components/ShopModal';
+import { useOutfitStore } from './store/useOutfitStore';
 
 function App() {
+  const currentView = useOutfitStore((s) => s.currentView);
+
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
@@ -33,62 +39,66 @@ function App() {
     <div className="relative min-h-screen bg-bg">
       <Navbar />
 
-      <main>
-        {/* 1. Header/Nav (rendered outside main) */}
-        
-        {/* 2. Hero Banner */}
-        <HeroSection />
+      {currentView === 'shop' ? (
+        <ShoppingPage />
+      ) : (
+        <main>
+          {/* 1. Header/Nav (rendered outside main) */}
+          
+          {/* 2. Hero Banner */}
+          <HeroSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 3. What we do (Travel Timeline) */}
-        <TimelineSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 3. What we do (Travel Timeline) */}
+          <TimelineSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 4. Quiz (Style DNA Section) */}
-        <StyleDNASection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 4. Quiz (Style DNA Section) */}
+          <StyleDNASection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 5. Red Patch (About Us) */}
-        <AboutUsSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 5. Red Patch (About Us) */}
+          <AboutUsSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 6. Comparison / Horizontal Scroll */}
-        <ShopSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 6. Comparison / Horizontal Scroll */}
+          <ShopSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 7. Pick your universe (Aesthetics Grid) */}
-        <FeedSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 7. Pick your universe (Aesthetics Grid) */}
+          <FeedSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 8. AI Stylist (Chat Section) */}
-        <StylistSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 8. AI Stylist (Chat Section) */}
+          <StylistSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 9. Testimonials Section */}
-        <TestimonialsSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 9. Testimonials Section */}
+          <TestimonialsSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 10. Instagram Feed */}
-        <InstagramSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 10. Instagram Feed */}
+          <InstagramSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 11. FAQs (Accordion) */}
-        <FAQSection />
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 11. FAQs (Accordion) */}
+          <FAQSection />
 
-        <div className="section-wrapper"><div className="divider" /></div>
-        
-        {/* 11. Contact (Form/Info) */}
-        <ContactSection />
-      </main>
+          <div className="section-wrapper"><div className="divider" /></div>
+          
+          {/* 11. Contact (Form/Info) */}
+          <ContactSection />
+        </main>
+      )}
 
       {/* 12. Footer */}
       <Footer />
@@ -105,3 +115,4 @@ function App() {
 }
 
 export default App;
+

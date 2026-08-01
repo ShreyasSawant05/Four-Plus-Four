@@ -362,17 +362,17 @@ export default function TimelineCard({
             {/* Right: Visual details */}
             <div className="flex-1 w-full h-[170px] md:h-[260px] grid grid-cols-3 gap-2 items-stretch py-1.5">
               {[
-                { label: 'Blazer', price: '₹9,999', icon: (
+                { label: 'Blazer', price: '₹4,999', icon: (
                   <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                   </svg>
                 ) },
-                { label: 'Trousers', price: '₹5,999', icon: (
+                { label: 'Trousers', price: '₹3,499', icon: (
                   <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a3 3 0 00-3 3v.75M12 3a3 3 0 013 3v.75m-6 0h6m-7.5 1.5l7.5-3 7.5 3v11.25a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15.75V5.25z" />
                   </svg>
                 ) },
-                { label: 'Bag', price: '₹14,999', icon: (
+                { label: 'Bag', price: '₹5,899', icon: (
                   <svg className="w-8 h-8 text-burgundy/80" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
                   </svg>

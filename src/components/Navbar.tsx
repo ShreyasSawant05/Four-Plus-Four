@@ -6,17 +6,20 @@ import { useOutfitStore, type ModalType } from '../store/useOutfitStore';
 export default function Navbar() {
   const setActiveModal = useOutfitStore((s) => s.setActiveModal);
   const closeModal = useOutfitStore((s) => s.closeModal);
+  const currentView = useOutfitStore((s) => s.currentView);
+  const setCurrentView = useOutfitStore((s) => s.setCurrentView);
+
   const navRef = useRef<HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navItems: { label: string; modal?: ModalType; targetId?: string }[] = [
+  const navItems: { label: string; modal?: ModalType; targetId?: string; isShop?: boolean }[] = [
     { label: 'Discover', targetId: 'feed' },
     { label: 'Style DNA', targetId: 'styledna' },
     { label: 'Virtual Try-On', modal: 'try-on' },
     { label: 'Color Match', modal: 'color' },
     { label: 'Body Insights', modal: 'body' },
     { label: 'Style Lab', modal: 'style-lab' },
-    { label: 'Shop Looks', targetId: 'shop' },
+    { label: 'Shop Looks', isShop: true },
   ];
 
   useEffect(() => {
@@ -33,7 +36,13 @@ export default function Navbar() {
     setMobileOpen(false);
     closeModal();
 
-    if (item.targetId) {
+    if (item.isShop) {
+      setCurrentView('shop');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (item.targetId) {
+      if (currentView !== 'home') {
+        setCurrentView('home');
+      }
       setTimeout(() => {
         const el = document.getElementById(item.targetId!);
         if (el) {
@@ -45,8 +54,10 @@ export default function Navbar() {
             top: Math.max(0, offsetPosition),
             behavior: 'smooth',
           });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      }, 50);
+      }, 100);
     } else if (item.modal) {
       setActiveModal(item.modal);
     }
@@ -55,13 +66,16 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/55 backdrop-blur-xl border-b border-hairline-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-hairline-border"
       style={{ opacity: 0 }}
     >
       <div className="section-wrapper flex items-center justify-between h-20">
         {/* Brand Logo */}
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           id="nav-brand"
           className="hover:opacity-85 transition-opacity flex items-center gap-2"
         >
@@ -70,16 +84,25 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-7">
-          {navItems.map((item) => (
-            <button
-              key={item.label}
-              type="button"
-              onClick={() => handleClick(item)}
-              className="text-[13px] font-medium text-burgundy hover:text-[#d51927] transition-colors duration-200 tracking-wide"
-            >
-              {item.label}
-            </button>
-          ))}
+          {navItems.map((item) => {
+            const isActive = item.isShop ? currentView === 'shop' : currentView === 'home' && false;
+            return (
+              <button
+                key={item.label}
+                type="button"
+                onClick={() => handleClick(item)}
+                className={`text-[13px] font-medium transition-all duration-200 tracking-wide ${
+                  item.isShop
+                    ? 'bg-burgundy text-white px-3.5 py-1.5 rounded-full shadow-sm hover:bg-[#d51927]'
+                    : isActive
+                    ? 'text-[#d51927] font-semibold'
+                    : 'text-burgundy hover:text-[#d51927]'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </div>
 
         {/* Mobile hamburger */}

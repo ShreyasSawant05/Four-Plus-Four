@@ -23,9 +23,9 @@ const lookProducts: Record<number, { store: string; name: string; price: string;
     { store: 'A.P.C.', name: 'Straight Japanese Denim', price: '₹3,499' },
   ],
   4: [
-    { store: 'Saint Laurent', name: 'Midnight Silk Bomber', price: '₹6,999', active: true },
-    { store: 'COS', name: 'Ribbed Cotton Tee', price: '₹1,299' },
-    { store: 'Zara', name: 'Midnight Tailored Jogger', price: '₹999' },
+    { store: 'Saint Laurent', name: 'Midnight Silk Bomber', price: '₹5,499', active: true },
+    { store: 'COS', name: 'Ribbed Cotton Tee', price: '₹2,199' },
+    { store: 'Zara', name: 'Midnight Tailored Jogger', price: '₹2,799' },
   ],
 };
 
